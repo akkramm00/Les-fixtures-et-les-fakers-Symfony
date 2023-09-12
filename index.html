@@ -67,6 +67,14 @@
               
             </pre>
             Pour la creation de la date qui va etre gé,érer par (-> setCreatedat), on peut construire une fonction magique (__construct) dans laquelle la date avetre générer automatiquement. <br>
+            Dans le fichier "ingredient.php" on peut ajouter alors le constructeur "createAd" <br>
+            <pre>
+              public function __construct()
+              {
+               $this->createedAt = new\dateTimeImmutable();
+              }
+            </pre> <br>
+            il ne faut pas oublier de typer les classes aussi.
             
             
             
