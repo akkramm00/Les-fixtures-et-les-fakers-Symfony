@@ -48,11 +48,27 @@
 
             <h2>Remarque</h2>
              Dans ledossier "Datafixtures" ainsi créé pendant l'installation du bundle fixytures, on en trouve : <br>
-            => AppFixtures.php <br>
-            namespace App\DataFixtures; <br>
-            use App\Entity\Ingredient; <br>
-            use Doctrine\Bundle\FixturesBundle\fixtures; br  
-            use Doctrine\Persistence\ObjectManager
+            <pre>
+            AppFixtures.php 
+            namespace App\DataFixtures; 
+            use App\Entity\Ingredient; 
+            use Doctrine\Bundle\FixturesBundle\fixtures;  
+            use Doctrine\Persistence\ObjectManager;
+
+            class AppFixtures extends Fixture 
+              {public function load(objectManager $manager): void
+              {
+              $ingredient = new Ingredient();
+              $ingredient -> setName('Ingredient #1')
+                  ->setPrice(3,0);
+                  ->setCreatedAt
+              }
+              }
+              
+            </pre>
+            Pour la creation de la date qui va etre gé,érer par (-> setCreatedat), on peut construire une fonction magique (__construct) dans laquelle la date avetre générer automatiquement. <br>
+            
+            
             
           </span>
           
