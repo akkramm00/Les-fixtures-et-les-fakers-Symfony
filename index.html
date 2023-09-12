@@ -5,15 +5,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Les fixtures et les fakers en Symfony</title>
+  <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+  <main class="container">
+    <div class="row">
+      <div class="col">
   <h1>Introduction</h1>
   <p>
-    Les fixtures sont des programmes informatiques proposées par Symfony dans l'objectif de pouvoiur générer des donnnées fictives en quelques secondes pour tester noitre application. <br>
-    
+    Les fixtures sont des programmes informatiques proposées par Symfony dans l'objectif de pouvoiur générer des
+    donnnées fictives en quelques secondes pour tester noitre application. <br>
+    Les fixtures sont souvent utilisées en mode développement en utilisant l'extention (--dev) dans la ligne de
+    commande, pour ne pas compromettre la sécurité des données.
   </p>
+        <h2>Astuce</h2>
+        <p>
+          POur installer les dépendances de fixtures dans notre projet , composer nous propose la commande ci-dessous : <br><br>
+
+          $ composer require --dev orm-fixtures
+          <br><br>
+
+          On en profite aussi pour installer la dépendance de "faker" qui nous permettra de générer des faux noms, des fausses images , et des fausses données <span class="br">
+            Pour installer faker , on utilise lma commande ci-dessous :
+            <br><br>
+
+            $composer require fakerphp/faker --dev
+
+            <br><br>
+            faker est aussi utilisé en mode développeur .br  
+            Resultat d'installation :br  
+            => Datafixtures/Appfixtures.php . <br>  
+
+            Une fois toutes les modification apportées, on utilise la commande suivante : <br>
+            $ php bin/console docctrine:fixtures:load
+             <br>
+             Cette commande permet de remettre à jour la base de données  "will be purged ?"
+            
+          </span>
+          
+        </p>
+        
+      </div>
+    </div>
+  </main>
 
 
 
@@ -23,7 +59,7 @@
 
 
 
-  
+
   <script src="script.js"></script>
   <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
 </body>
