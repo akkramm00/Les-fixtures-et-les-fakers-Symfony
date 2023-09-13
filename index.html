@@ -89,6 +89,27 @@
                   $manager ->flush();
                 }
               </pre>
+            <br><br>
+
+            Jusqu'a present, il n'y a qu'un seul ingredient dans la base de données. <br>
+            Pour créer plusieurs ingrédient, on va faire appel a une boucle "for" pour dupliquer les ingrédients comme le code  ci-dessous :
+
+            <pre>
+              class AppFixtures extends Fixture
+              {
+              public function load(objectManager $manager): void
+               {
+               for($i; $i<= 50 ; $i++){
+                 $ingredient = new ingredient();
+                $ingredient -> setName('Ingredient' , $i);
+                            -> setPrice(mt_rand(0, 100));
+
+                $manager -> persist($ingredient);
+                }
+                $manager->flush();
+               }
+              }
+            </pre>
             
             </p>
            
