@@ -27,6 +27,24 @@
      <div class="col">
       <h1>CRUD</h1>
        <span>Fetching Objects from The DataBase = Récuperer des objets de la base de données</span>
+       <p>
+         Pour pouvoir récuperer des données depuis une base de données, on fait appel à desrépository depuis Doctrine, en utilisant des méthodes (findAll, fingBy ...). <br><br>
+
+         La première étape de ce processus consiste à créer un controleur (genre IngredientController.php) en utilisant la commande : <br><br>
+
+         $ php bin/console make:controller  ingredientController
+
+         <br><br>
+
+         Dans le code source, on va créer un dossier "Pages" dans lequel on va mettre les fichiers de view :
+         <pre>
+            Pages
+             -Ingredient
+               - home.html.twig
+         </pre>
+       N'oublions pas de changer les chemins vers les fichiers au niveau du controller après cette modification. <br>
+       La deuxième étape connsiste à integrer le repository dans le controller "IngredientController.php" .
+       </p>
        
     </div>
    </div>
