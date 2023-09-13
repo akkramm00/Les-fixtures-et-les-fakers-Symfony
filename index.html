@@ -74,12 +74,28 @@
                $this->createedAt = new\dateTimeImmutable();
               }
             </pre> <br>
-            il ne faut pas oublier de typer les classes aussi.
+            <span> il ne faut pas oublier de typer les classes aussi.</span>
+            <p>
+              dans un fichier " AppFixtures.php", on va rajouter une méthode "$manager" à la fonction "load" , ca nous donne : <br>
+              <pre>
+                class AppFixtures extends Fixture
+                public function load(objectifManager $manager): void
+                {
+                 $ingredient = new Ingredient;
+                 $ingredient->setName('Ingredient #1')
+                            -> setPrice(3, 0)
+
+                  $manager ->persist($ingredient);
+                  $manager ->flush();
+                }
+              </pre>
+            
+            </p>
+           
             
             
             
-          </span>
-          
+
         </p>
         
       </div>
