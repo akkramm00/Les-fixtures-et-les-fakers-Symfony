@@ -110,6 +110,45 @@
                }
               }
             </pre>
+
+            <br><br>
+            Pour relancer les fixtures avec la commande: <br>
+            => $ php bin/console doctrine:fixtures:load <br>
+            =  $ php bin/console d:f:l  
+            <br><br>
+
+            Jusqu'à present , on n'utilise que les fixtures. Pour faire appel au faker, on procede de cette manière : 
+            <pre>
+
+              class AppFixtures extends Fixture
+              {
+              /**
+              * @var Generator
+              */
+
+              private Generator $faker;
+              public function __construct()
+                $this-> facker = Factory::create('fr_FR');
+              }
+               public function load(objectManager $manager): void
+               {
+               for($i; $i<= 50 ; $i++){
+                 $ingredient = new ingredient();
+                $ingredient -> setName('Ingredient' , $i);
+                            -> setPrice(mt_rand(0, 100));
+
+                $manager -> persist($ingredient);
+                }
+                $manager->flush();
+               }
+              }
+              
+            </pre>
+            il faut relancer les fixtures en utlisant la commande suivante: <br><br>
+
+            $ php bin/console d:f:l
+            <br><br>
+            
             
             </p>
            
