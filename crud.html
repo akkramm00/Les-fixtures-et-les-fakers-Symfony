@@ -95,7 +95,12 @@
 
                <tbody>
                  {% for ingredient in ingredients %}
-                 
+                 <tr class="table table-primary">
+                   <th scope="row">{{ ingredient.id}}</th>
+                   <td>{{ ingredient.name}}</td>
+                   <td>{{ ingredient.price}}</td>
+                   <td>{{ ingredient.createdAt|date('d/m/Y')}}</td>
+                 </tr>
                </tbody>
              </table>
            </div>
