@@ -44,9 +44,19 @@
          </pre>
        N'oublions pas de changer les chemins vers les fichiers au niveau du controller après cette modification. <br>
        La deuxième étape connsiste à integrer le repository dans le controller "IngredientController.php" .
+       <br><br>
        <pre>
-         class IngredientController extends AbstractController{
-         
+         class IngredientController extends AbstractController
+         {
+         #[Route('/igredient' , name: 'ingredient')]
+         public function index(IngredientRepository $repository): response
+         {
+           $ingredients = $repository -> findAll();
+
+          return $this -> render('pages/ingredient/index.html.twig' , [
+           'ingredient' = $ingredient
+          ]);
+          }
          }
        </pre>
        </p>
