@@ -112,6 +112,36 @@
          Le resultat de la requete est un tableau,  et vu qu'il y'a beaucoup de recette , la recherche des articles s'avère compliquée. <br>
          Une réponce à ce problème c'est qu'il faut mettre les resultats sur plusieurs pages. 
        </p>
+       <br>
+       <h2>La Pagination</h2>
+       <p>
+         Le Bundle Knp/KnpPaginatorBundle est recommandé par Symfony. <br>
+         Pour installer ce Bundle au sein de notre projet, on utilisera la commande ci-dessous / 
+         <br>
+         => $ composer require Knp/Knp-paginator-bundle
+         <br><br>
+
+         Pour la configuration de ce Bundle, Symfony nous recommande de créer un fichier "yaml" ,dans lequel il faut inserer le code YAML fourni dans la documentation .(Knp-paginator.yaml) <br>
+         <br>
+          il nous reste à inserer la ependance de la pagination dans le controller, à l'intérieur de la fonction index, comme ci -dessous :
+         <br><br>
+
+         
+<pre>
+   #[Route('/ingredient, namme: 'ingredient) , methods['GET'])]
+         public function index(IngredientRespository $repository, PaginatorInterface $paginator):  repsonse
+         {
+            $ingredient = $paginator paginate(
+            $repository ->findAll(),
+            $request-è>query->getInt('page, 1'), 10
+            ),
+         return $this->render('pages/ingredient/index.html.twig', [
+            'ingredient => $ingrdient'
+         ]);
+         }
+</pre>
+        
+       </p>
        
     </div>
    </div>
