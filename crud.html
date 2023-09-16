@@ -140,6 +140,17 @@
          ]);
          }
 </pre>
+       <br><br>
+
+       => Pour un display de la navigation, il faut que sur notre page de vue (index.html.twig) , on insert une div permettant de dupliquer les pages: <br>
+       <pre>
+          <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+          </div>
+       </pre>
+       Cette div est à inserer juste après le tableau de la vue. <br><br>
+
+       pour modifier le thème de la pagination,, on fait une recherche dans le GitHub du Bundle "Knp/Knp.paginator" et il nouis propose un template "bootstrap" que l'on peut inserer dans le fichier "Knp_pagination.yaml" pour modifier le theme de l'affichage.
         
        </p>
        
